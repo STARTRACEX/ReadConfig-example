@@ -1,0 +1,6 @@
+title="toml"
+author="you"
+[obj]
+inner = true
+[obj2]
+inner = true
