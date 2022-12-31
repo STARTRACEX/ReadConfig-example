@@ -2,10 +2,11 @@ package yaml
 
 import (
 	"fmt"
-	"github.com/goccy/go-yaml"
 	"os"
+	"readconfig/types"
 	"regexp"
 	"strings"
+	"github.com/goccy/go-yaml"
 )
 
 func ReadYamlWithMD(path string) {
@@ -15,7 +16,7 @@ func ReadYamlWithMD(path string) {
 	fmt.Println("Meta date:", data)
 	fmt.Println("Meta date Length:", l)
 	fmt.Println("File content:", string(fileread[l:]))
-	var config basetype
+	var config types.Maintype
 	yaml.Unmarshal([]byte(data), &config)
 	if config.Title == "" {
 		config.Title = getTitie(string(fileread[l:]))
